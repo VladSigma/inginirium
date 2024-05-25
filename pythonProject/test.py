@@ -1,13 +1,12 @@
-def coordinates(x,y):
-    if x > 0 and y > 0:
-        print("I")
-    elif x < 0 and y > 0:
-        print("II")
-    elif x < 0 and y < 0:
-        print ("III")
-    elif x > 0 and y < 0:
-        print("IV")
-
-x = int(input())
-y = int(input())
-coordinates(x,y)
+def check_string_brackets(input_string):
+    balance = 0 #счетчик баланса
+    for char in input_string:
+        if char == '(':
+            balance+=1
+        elif char == ')':
+            balance-=1
+            if balance < 0:
+                return "no"
+    return "yes" if balance == 0 else "no"
+print(check_string_brackets("(()())"))
+print(check_string_brackets("(()()))"))
